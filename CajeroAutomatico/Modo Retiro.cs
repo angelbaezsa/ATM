@@ -21,6 +21,7 @@ namespace CajeroAutomatico
                 Console.WriteLine("Modo de cambio: ");
                 Console.WriteLine("1- 100-500\n2- 200-1000\n3- Retirar");
                 int opcionMenuRetiro = Convert.ToInt32(Console.ReadLine());
+                VariableRetiro.MetodoRetiro.OpcionRetiro = opcionMenuRetiro;
 
 
             try
@@ -31,20 +32,24 @@ namespace CajeroAutomatico
                     switch (opcionMenuRetiro)
                     {
                         case (int)opcionesMenuRetiro.OPCION1:
-                        Retiro retirar1 = new Retiro();
-                        retirar1.RetirarModo1();
+                        MenuPrincipal retirar1 = new MenuPrincipal();
+                        retirar1.MainMenu();
+                        VariableRetiro.MetodoRetiro.OpcionRetiro = 1;
+                        
 
                         break;
                         case (int)opcionesMenuRetiro.OPCION2:
-                        Retiro retirar2 = new Retiro();
-                        retirar2.RetirarModo2();
+                        MenuPrincipal retirar2 = new MenuPrincipal();
+                        retirar2.MainMenu();
+                        VariableRetiro.MetodoRetiro.OpcionRetiro = 2;
 
                         break;
                         case (int)opcionesMenuRetiro.OPCION3:
-                        Retiro retirar = new Retiro();
-                        retirar.RetirarRapido();
-                        
-                            break;
+                        MenuPrincipal retirar3 = new MenuPrincipal();
+                        retirar3.MainMenu();
+                        VariableRetiro.MetodoRetiro.OpcionRetiro = 3;
+
+                        break;
                         default:
                             Console.WriteLine("seleccione una opcion correcta");
                             Console.ReadKey();
